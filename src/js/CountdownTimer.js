@@ -5,7 +5,7 @@ export class CountdownTimer {
     this.currentTime = Date.now();
   }
   pad(value) {
-    return String(value).padStart('0', 2);
+    return String(value).padStart(2, '0');
   }
   getTime() {
     return this.targetDate - this.currentTime;
@@ -37,7 +37,10 @@ export class CountdownTimer {
     refs.mins.textContent = mins;
     refs.secs.textContent = secs;
   }
-  initTimer() {
-    this.changeTime(this.estimateValue(this.getTime()));
+  initTime() {
+    // this.changeTime(this.estimateValue(this.getTime()));
+    setInterval(() => {
+      this.changeTime(this.estimateValue(this.getTime()));
+    }, 1000);
   }
 }

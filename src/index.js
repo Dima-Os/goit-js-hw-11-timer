@@ -6,4 +6,5 @@ const timer = new CountdownTimer({
   targetDate: new Date('Jul 17, 2021'),
 });
 
-timer.initTimer();
+timer.initTime();
+// timer.startCountdown();
