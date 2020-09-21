@@ -7,3 +7,37 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+.timer {
+  padding-top: 2rem;
+  margin: 0 auto;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-around;
+}
+.field {
+  justify-content: center;
+  width: 4.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #333;
+  border-radius: 15px;
+  background-color: rgb(206, 206, 206);
+}
+.value,
+.label {
+  display: block;
+}
+.value {
+  padding: 5px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.label {
+  background-color: rgb(232, 230, 243);
+  padding: 2px;
+  border: 1px solid;
+  color: rgb(63, 60, 71);
+  border-radius: 5px;
+  margin-bottom: 0.25rem;
+}

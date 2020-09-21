@@ -2,13 +2,12 @@ export class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.selector = selector;
     this.targetDate = targetDate;
-    this.currentTime = Date.now();
   }
   pad(value) {
     return String(value).padStart(2, '0');
   }
   getTime() {
-    return this.targetDate - this.currentTime;
+    return this.targetDate - Date.now();
   }
   estimateValue(time) {
     const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
@@ -38,7 +37,6 @@ export class CountdownTimer {
     refs.secs.textContent = secs;
   }
   initTime() {
-    // this.changeTime(this.estimateValue(this.getTime()));
     setInterval(() => {
       this.changeTime(this.estimateValue(this.getTime()));
     }, 1000);
