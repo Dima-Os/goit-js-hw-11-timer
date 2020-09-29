@@ -7,4 +7,3 @@ const timer = new CountdownTimer({
 });
 
 timer.initTime();
-// timer.startCountdown();
