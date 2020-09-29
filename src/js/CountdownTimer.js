@@ -3,10 +3,10 @@ export class CountdownTimer {
     this.selector = selector;
     this.targetDate = targetDate;
     this.refs = {
-      days: document.querySelector('span[data-value="days"]'),
-      hours: document.querySelector('span[data-value="hours"]'),
-      mins: document.querySelector('span[data-value="mins"]'),
-      secs: document.querySelector('span[data-value="secs"]'),
+      days: document.querySelector(`${selector} .value[data-value="days"]`),
+      hours: document.querySelector(`${selector} .value[data-value="hours"]`),
+      mins: document.querySelector(`${selector} .value[data-value="mins"]`),
+      secs: document.querySelector(`${selector} .value[data-value="secs"]`),
     };
   }
   pad(value) {
@@ -15,7 +15,6 @@ export class CountdownTimer {
   getTime() {
     return this.targetDate - Date.now();
   }
-
   changeTime(time) {
     this.refs.days.textContent = this.pad(
       Math.floor(time / (1000 * 60 * 60 * 24)),
